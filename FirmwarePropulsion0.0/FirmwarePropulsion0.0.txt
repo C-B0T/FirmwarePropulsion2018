@@ -1,0 +1,63 @@
+Configuration	FirmwarePropulsion0.0
+STM32CubeMX 	4.23.0
+Date	12/03/2017
+MCU	STM32F407IGTx
+
+
+
+PERIPHERALS	MODES	FUNCTIONS	PINS
+SYS	TIM1	SYS_VS_tim1	VP_SYS_VS_tim1
+TIM2	PWM Generation CH1	TIM2_CH1	PA0-WKUP
+TIM5	Encoder Mode	TIM5_CH1	PH10
+TIM5	Encoder Mode	TIM5_CH2	PH11
+TIM8	Encoder Mode	TIM8_CH1	PI5
+TIM8	Encoder Mode	TIM8_CH2	PI6
+TIM9	PWM Generation CH1	TIM9_CH1	PA2
+USART1	Asynchronous	USART1_RX	PB7
+USART1	Asynchronous	USART1_TX	PB6
+
+
+
+Pin Nb	PINs	FUNCTIONs	LABELs
+40	PA0-WKUP	TIM2_CH1	MOT_EN0
+41	PA1	GPIO_Output	MOT_DIR0
+42	PA2	TIM9_CH1	MOT_EN1
+43	PH2	GPIO_Output	MOT_BRAKE0
+44	PH3	GPIO_Output	MOT_BRAKE1
+47	PA3	GPIO_Output	MOT_DIR1
+86	PH9	GPIO_Input	ENC0_IND
+87	PH10	TIM5_CH1	ENC0_CHA
+88	PH11	TIM5_CH2	ENC0_CHB
+164	PB6	USART1_TX	UART1_TX
+165	PB7	USART1_RX	UART1_RX
+173	PI4	GPIO_Input	ENC1_IND
+174	PI5	TIM8_CH1	ENC1_CHA
+175	PI6	TIM8_CH2	ENC1_CHB
+
+
+
+SOFTWARE PROJECT
+
+Project Settings : 
+Project Name : FirmwarePropulsion0.0
+Project Folder : C:\CBot\workspace\FirmwarePropulsion2018\FirmwarePropulsion0.0
+Toolchain / IDE : SW4STM32
+Firmware Package Name and Version : STM32Cube FW_F4 V1.17.0
+
+
+Code Generation Settings : 
+STM32Cube Firmware Library Package : Copy only the necessary library files
+Generate peripheral initialization as a pair of '.c/.h' files per peripheral : Yes
+Backup previously generated files when re-generating : No
+Delete previously generated files when not re-generated : Yes
+Set all free pins as analog (to optimize the power consumption) : No
+
+
+Toolchains Settings : 
+Compiler Optimizations : Balanced Size/Speed
+
+
+
+
+
+
