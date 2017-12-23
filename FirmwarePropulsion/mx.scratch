@@ -23,7 +23,7 @@
 <configs>
   <config>
     <name>FirmwarePropulsion</name>				
-    <device>STM32F446ZETx</device>		 
+    <device>STM32F446RETx</device>		 
     <heapSize>0x200</heapSize>
     <stackSize>0x400</stackSize>
     

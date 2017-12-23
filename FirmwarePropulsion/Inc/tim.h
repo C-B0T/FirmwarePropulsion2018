@@ -1,7 +1,8 @@
 /**
   ******************************************************************************
-  * File Name          : freertos.c
-  * Description        : Code for freertos applications
+  * File Name          : TIM.h
+  * Description        : This file provides code for the configuration
+  *                      of the TIM instances.
   ******************************************************************************
   * This notice applies to any and all portions of this file
   * that are not between comment pairs USER CODE BEGIN and
@@ -45,122 +46,48 @@
   *
   ******************************************************************************
   */
+/* Define to prevent recursive inclusion -------------------------------------*/
+#ifndef __tim_H
+#define __tim_H
+#ifdef __cplusplus
+ extern "C" {
+#endif
 
 /* Includes ------------------------------------------------------------------*/
-#include "FreeRTOS.h"
-#include "task.h"
-#include "cmsis_os.h"
+#include "stm32f4xx_hal.h"
+#include "main.h"
 
-/* USER CODE BEGIN Includes */     
-#include "gpio.h"
+/* USER CODE BEGIN Includes */
 
 /* USER CODE END Includes */
 
-/* Variables -----------------------------------------------------------------*/
-osThreadId defaultTaskHandle;
-osThreadId dialogTaskHandle;
-osThreadId blinkLedHandle;
+extern TIM_HandleTypeDef htim2;
+extern TIM_HandleTypeDef htim3;
 
-/* USER CODE BEGIN Variables */
+/* USER CODE BEGIN Private defines */
 
-/* USER CODE END Variables */
+/* USER CODE END Private defines */
 
-/* Function prototypes -------------------------------------------------------*/
-void StartDefaultTask(void const * argument);
-void StartDialogTask(void const * argument);
-void StartBlinkLedTask(void const * argument);
+extern void _Error_Handler(char *, int);
 
-void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
+void MX_TIM2_Init(void);
+void MX_TIM3_Init(void);
 
-/* USER CODE BEGIN FunctionPrototypes */
+/* USER CODE BEGIN Prototypes */
 
-/* USER CODE END FunctionPrototypes */
+/* USER CODE END Prototypes */
 
-/* Hook prototypes */
-
-/* Init FreeRTOS */
-
-void MX_FREERTOS_Init(void) {
-  /* USER CODE BEGIN Init */
-       
-  /* USER CODE END Init */
-
-  /* USER CODE BEGIN RTOS_MUTEX */
-  /* add mutexes, ... */
-  /* USER CODE END RTOS_MUTEX */
-
-  /* USER CODE BEGIN RTOS_SEMAPHORES */
-  /* add semaphores, ... */
-  /* USER CODE END RTOS_SEMAPHORES */
-
-  /* USER CODE BEGIN RTOS_TIMERS */
-  /* start timers, add new ones, ... */
-  /* USER CODE END RTOS_TIMERS */
-
-  /* Create the thread(s) */
-  /* definition and creation of defaultTask */
-  osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 128);
-  defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
-
-  /* definition and creation of dialogTask */
-  osThreadDef(dialogTask, StartDialogTask, osPriorityIdle, 0, 128);
-  dialogTaskHandle = osThreadCreate(osThread(dialogTask), NULL);
-
-  /* definition and creation of blinkLed */
-  osThreadDef(blinkLed, StartBlinkLedTask, osPriorityIdle, 0, 128);
-  blinkLedHandle = osThreadCreate(osThread(blinkLed), NULL);
-
-  /* USER CODE BEGIN RTOS_THREADS */
-  /* add threads, ... */
-  /* USER CODE END RTOS_THREADS */
-
-  /* USER CODE BEGIN RTOS_QUEUES */
-  /* add queues, ... */
-  /* USER CODE END RTOS_QUEUES */
+#ifdef __cplusplus
 }
+#endif
+#endif /*__ tim_H */
 
-/* StartDefaultTask function */
-void StartDefaultTask(void const * argument)
-{
+/**
+  * @}
+  */
 
-  /* USER CODE BEGIN StartDefaultTask */
-  /* Infinite loop */
-  for(;;)
-  {
-    osDelay(10);
-  }
-  /* USER CODE END StartDefaultTask */
-}
-
-/* StartDialogTask function */
-void StartDialogTask(void const * argument)
-{
-  /* USER CODE BEGIN StartDialogTask */
-  /* Infinite loop */
-  for(;;)
-  {
-    osDelay(10);
-  }
-  /* USER CODE END StartDialogTask */
-}
-
-/* StartBlinkLedTask function */
-void StartBlinkLedTask(void const * argument)
-{
-  /* USER CODE BEGIN StartBlinkLedTask */
-  /* Infinite loop */
-  for(;;)
-  {
-	HAL_GPIO_WritePin(LED4_GPIO_Port, LED4_Pin, GPIO_PIN_SET);
-	osDelay(250);
-	HAL_GPIO_WritePin(LED4_GPIO_Port, LED4_Pin, GPIO_PIN_RESET);
-	osDelay(250);
-  }
-  /* USER CODE END StartBlinkLedTask */
-}
-
-/* USER CODE BEGIN Application */
-     
-/* USER CODE END Application */
+/**
+  * @}
+  */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

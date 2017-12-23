@@ -57,8 +57,26 @@
 
 /* Private define ------------------------------------------------------------*/
 
-#define LD1_Pin GPIO_PIN_0
-#define LD1_GPIO_Port GPIOB
+#define ENC1_CHA_Pin GPIO_PIN_0
+#define ENC1_CHA_GPIO_Port GPIOA
+#define ENC1_CHB_Pin GPIO_PIN_1
+#define ENC1_CHB_GPIO_Port GPIOA
+#define ENC1_IND_Pin GPIO_PIN_2
+#define ENC1_IND_GPIO_Port GPIOA
+#define ENC0_CHA_Pin GPIO_PIN_6
+#define ENC0_CHA_GPIO_Port GPIOA
+#define ENC0_CHB_Pin GPIO_PIN_7
+#define ENC0_CHB_GPIO_Port GPIOA
+#define ENC0_IND_Pin GPIO_PIN_4
+#define ENC0_IND_GPIO_Port GPIOC
+#define LED1_Pin GPIO_PIN_12
+#define LED1_GPIO_Port GPIOB
+#define LED2_Pin GPIO_PIN_13
+#define LED2_GPIO_Port GPIOB
+#define LED3_Pin GPIO_PIN_14
+#define LED3_GPIO_Port GPIOB
+#define LED4_Pin GPIO_PIN_15
+#define LED4_GPIO_Port GPIOB
 
 /* ########################## Assert Selection ############################## */
 /**
