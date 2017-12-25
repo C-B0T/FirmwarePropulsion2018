@@ -53,6 +53,8 @@
 
 /* USER CODE BEGIN Includes */     
 #include "gpio.h"
+#include "dialog.h"
+#include "stdio.h"
 
 /* USER CODE END Includes */
 
@@ -127,7 +129,7 @@ void StartDefaultTask(void const * argument)
   /* Infinite loop */
   for(;;)
   {
-    osDelay(10);
+    osDelay(1000);
   }
   /* USER CODE END StartDefaultTask */
 }
@@ -136,11 +138,16 @@ void StartDefaultTask(void const * argument)
 void StartDialogTask(void const * argument)
 {
   /* USER CODE BEGIN StartDialogTask */
-  /* Infinite loop */
-  for(;;)
-  {
-    osDelay(10);
-  }
+	//  Dialog_Init(&huart2);
+	Dialog_Init(&huart1);
+	osDelay(500);
+	printf("StartComTask\r\n");
+	/* Infinite loop */
+	for(;;)
+	{
+	//osDelay(1000);
+	Dialog_Process();
+	}
   /* USER CODE END StartDialogTask */
 }
 

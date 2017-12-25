@@ -57,18 +57,40 @@
 
 /* Private define ------------------------------------------------------------*/
 
+#define MOT1_BRAKE_Pin GPIO_PIN_13
+#define MOT1_BRAKE_GPIO_Port GPIOC
+#define MOT1_DIAG_Pin GPIO_PIN_0
+#define MOT1_DIAG_GPIO_Port GPIOC
+#define SENS0_Pin GPIO_PIN_1
+#define SENS0_GPIO_Port GPIOC
+#define SENS2_Pin GPIO_PIN_2
+#define SENS2_GPIO_Port GPIOC
 #define ENC1_CHA_Pin GPIO_PIN_0
 #define ENC1_CHA_GPIO_Port GPIOA
 #define ENC1_CHB_Pin GPIO_PIN_1
 #define ENC1_CHB_GPIO_Port GPIOA
 #define ENC1_IND_Pin GPIO_PIN_2
 #define ENC1_IND_GPIO_Port GPIOA
+#define MOT0_BRAKE_Pin GPIO_PIN_3
+#define MOT0_BRAKE_GPIO_Port GPIOA
+#define MOT0_REF_Pin GPIO_PIN_4
+#define MOT0_REF_GPIO_Port GPIOA
+#define MOT1_REF_Pin GPIO_PIN_5
+#define MOT1_REF_GPIO_Port GPIOA
 #define ENC0_CHA_Pin GPIO_PIN_6
 #define ENC0_CHA_GPIO_Port GPIOA
 #define ENC0_CHB_Pin GPIO_PIN_7
 #define ENC0_CHB_GPIO_Port GPIOA
 #define ENC0_IND_Pin GPIO_PIN_4
 #define ENC0_IND_GPIO_Port GPIOC
+#define MOT0_DIAG_Pin GPIO_PIN_5
+#define MOT0_DIAG_GPIO_Port GPIOC
+#define SENS3_Pin GPIO_PIN_0
+#define SENS3_GPIO_Port GPIOB
+#define SENS1_Pin GPIO_PIN_1
+#define SENS1_GPIO_Port GPIOB
+#define EMERGENCY_STOP_Pin GPIO_PIN_2
+#define EMERGENCY_STOP_GPIO_Port GPIOB
 #define LED1_Pin GPIO_PIN_12
 #define LED1_GPIO_Port GPIOB
 #define LED2_Pin GPIO_PIN_13
@@ -77,6 +99,18 @@
 #define LED3_GPIO_Port GPIOB
 #define LED4_Pin GPIO_PIN_15
 #define LED4_GPIO_Port GPIOB
+#define MOT0_TACHO_Pin GPIO_PIN_6
+#define MOT0_TACHO_GPIO_Port GPIOC
+#define MOT1_TACHO_Pin GPIO_PIN_7
+#define MOT1_TACHO_GPIO_Port GPIOC
+#define MOT0_EN_Pin GPIO_PIN_6
+#define MOT0_EN_GPIO_Port GPIOB
+#define MOT0_DIR_Pin GPIO_PIN_7
+#define MOT0_DIR_GPIO_Port GPIOB
+#define MOT1_DIR_Pin GPIO_PIN_8
+#define MOT1_DIR_GPIO_Port GPIOB
+#define MOT1_EN_Pin GPIO_PIN_9
+#define MOT1_EN_GPIO_Port GPIOB
 
 /* ########################## Assert Selection ############################## */
 /**
